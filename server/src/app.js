@@ -8,6 +8,7 @@ import userRoutes from './routes/users.js';
 const app = express();
 
 app.use(morgan('dev'));
+//specify frontends el momken tklm el server bta3y
 app.use(cors({ origin: 'http://localhost:5175', credentials: false }));
 app.use(express.json());
 

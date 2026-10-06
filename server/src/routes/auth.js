@@ -6,6 +6,6 @@ const router = Router();
 
 router.post('/register', register);
 router.post('/login', login);
-router.get('/me', requireAuth, me);
+router.get('/me', requireAuth, me); //apply middleware to protect this route
 
 export default router;

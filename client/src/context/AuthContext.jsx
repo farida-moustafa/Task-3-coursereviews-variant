@@ -17,7 +17,8 @@ export function AuthProvider({ children }) {
       .finally(() => setLoading(false))
   }, [])
 
-  const login = useCallback(async (email, password) => {
+  const login = useCallback(async (email, password) => { //cache results of this function so it doesn't get recreated on every render
+    //if dependencies change, the function will be recreated. In this case, there are no dependencies, so it will only be created once.
     const res = await api.post('/auth/login', { email, password })
     localStorage.setItem('token', res.data.token)
     setUser(res.data.user)

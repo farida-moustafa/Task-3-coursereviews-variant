@@ -25,6 +25,8 @@ export async function register(req, res, next) {
   } catch (err) { next(err); }
 }
 
+//where is token stored in the frontend? in local storage (persistent but easily accessible), session storage (cleared when tab is closed), or in memory (cleared when page is refreshed). In this case, we will store it in local storage. Cookie storage (cant access but can be sent automatically with every request).
+
 const loginSchema = Joi.object({
   email: Joi.string().email().required(),
   password: Joi.string().required()
